@@ -4,7 +4,7 @@ plugins {
     id 'java'
 }
 
-group = 'by.sankovsky.vape_shop'
+group = 'com.example.library.library'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '8'
 
