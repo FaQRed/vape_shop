@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Редактирование</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form th:action="@{references/pods/updatePod}" method="post" th:object="${pod}" id="edit_pod">
+                <input type="hidden" name="pid" th:field="*{pid}" id="edit-pod-id">
+                <div class="mb-1 w-30 h-30">
+                    <img class="card-img" th:src="@{references/pods/image(pid=${pod.pid})}"/>
+                    <input class="form-control" type="file" value="" id="formFile"
+                           name="maintenanceFile">
+                </div>
+                <div class="mb-1">
+                    <label for="edit-pod-name" class="col-form-label">Название:</label>
+                    <input type="text" class="form-control" th:field="*{name}" id="edit-pod-name" name="name" required>
+                </div>
+                <div class="mb-1">
+                    <label for="edit-pod-battery" class="col-form-label">Емкость аккумулятора (mAh):</label>
+                    <input type="number" class="form-control" th:field="*{battery}" id="edit-pod-battery"
+                           name="battery">
+                </div>
+                <div class="mb-1">
+                    <label for="pod-manufacturer" class="col-form-label">Производитель:</label>
+                    <input type="text" class="form-control" th:field="*{manufacturer}" id="pod-manufacturer"
+                           name="manufacturer">
+                </div>
+                <div class="mb-1">
+                    <label for="pod-year-of-issue" class="col-form-label">Дата выпуска:</label>
+                    <input type="number" placeholder="YYYY" min="1700" max="2100" class="form-control"
+                           th:field="*{yearOfIssue}" id="pod-year-of-issue" name="yearOfIssue">
+                </div>
+                <div class="mb-3">
+                    <label for="pod-charge-time" class="col-form-label">Время зарядки:</label>
+                    <input type="number" th:field="*{chargeTime}" class="form-control" id="pod-charge-time"
+                           name="chargeTime">
+                </div>
+                <div class="mb-3">
+                    <label for="pod-volume" class="col-form-label">Объем бака:</label>
+                    <input type="number" th:field="*{volume}" class="form-control" id="pod-volume"
+                           name="volume" required>
+                </div>
+                <div class="mb-3">
+                    <label for="pod-availableCount" class="col-form-label">Доступное количество:</label>
+                    <input type="number" th:field="*{availableCount}" class="form-control" id="pod-availableCount"
+                           name="availableCount" required>
+                </div>
+
+
+                <div class="modal-footer" style="border: none">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        Закрыть
+                    </button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

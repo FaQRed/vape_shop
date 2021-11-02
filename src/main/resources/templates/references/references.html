@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments/header::head(~{::script}, ~{})">
+    <script type="text/javascript" th:src="@{/js/references.js}"></script>
+</head>
+<body>
+<header>
+    <div th:replace="fragments/nav-bar :: nav_bar"></div>
+</header>
+<main>
+    <div class="container-fluid mt-1">
+        <ul class="nav nav-tabs" id="referencesTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link" id="pod-tab" th:href="@{/references/pods}" data-bs-toggle="tab"
+                   data-bs-target="#podTab"
+                   role="tab">POD</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="odnorazki-tab" th:href="@{/references/odnorazki}" data-bs-toggle="tab"
+                   data-bs-target="#odnorazkiTab"
+                   role="tab">Одноразки</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="zhidkosti-tab" th:href="@{/references/zhidkosti}" data-bs-toggle="tab"
+                   data-bs-target="#zhidkostiTab"
+                   role="tab">Жидкости</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="vape-tab" th:href="@{/references/vape}" data-bs-toggle="tab"
+                   data-bs-target="#vapeTab"
+                   role="tab">Вейпы</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade" id="podTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="odnorazkiTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="zhidkostiTab" role="tabpanel"></div>
+            <div class="tab-pane fade" id="vapeTab" role="tabpanel"></div>
+        </div>
+    </div>
+</main>
+<footer th:include="fragments/footer :: footer"></footer>
+</body>
+</html>

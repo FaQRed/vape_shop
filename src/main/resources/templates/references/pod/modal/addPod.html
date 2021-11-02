@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="addModalLabel">Добавление под-системы</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+        </div>
+        <div class="modal-body">
+            <form th:action="@{/references/pods/savePod}" method="post" id="add_pod">
+                <div class="mb-3">
+                    <label for="pod-name" class="col-form-label">Название:</label>
+                    <input type="text" class="form-control" id="pod-name" name="name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pod-battery" class="col-form-label">Емкость аккумулятора (mAh):</label>
+                    <input type="number" class="form-control" id="pod-battery" name="battery">
+                </div>
+
+                <div class="mb-3">
+                    <label for="pod-manufacturer" class="col-form-label">Производитель:</label>
+                    <input type="text" class="form-control" id="pod-manufacturer" name="manufacturer">
+                </div>
+                <div class="mb-3">
+                    <label for="pod-year_of_issue" class="col-form-label">Дата выпуска:</label>
+                    <input type="number" placeholder="YYYY" min="1700" max="2100" class="form-control"
+                           id="pod-year_of_issue" name="yearOfIssue">
+                </div>
+                <div class="mb-3">
+                    <label for="pod-charge-time" class="col-form-label">Время зарядки (мин):</label>
+                    <input type="number" class="form-control" id="pod-charge-time"
+                           name="chargeTime">
+                </div>
+                <div class="mb-3">
+                    <label for="pod-volume" class="col-form-label">Объем бака (мл):</label>
+                    <input type="number" class="form-control" id="pod-volume"
+                           name="volume">
+                </div>
+                <div class="mb-3">
+                    <label for="pod-available-count" class="col-form-label">Доступное количество:</label>
+                    <input type="number" class="form-control" id="pod-available-count"
+                           name="availableCount">
+                </div>
+                <div class="mb-3">
+                    <label for="formFile" class="form-label">Обложка</label>
+                    <input class="form-control" type="file" id="formFile" name="maintenanceFile">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть
+                    </button>
+                    <button type="submit" class="btn btn-primary">Сохранить</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+</html>
