@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body th:fragment="nav_bar">
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+    <div class="container-fluid" >
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@
                 </li>
                 <li sec:authorize="hasAuthority('CUSTOMER') or hasAuthority('ADMIN') or hasAuthority('MODERATOR')" class="nav-item">
                     <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/main_cabinet')? 'active':''}"
-                       aria-current="page" th:href="@{/main_cabinet}">Личный кабинет</a>
+                       aria-current="page" th:href="@{/personalCabinet/edit}">Личный кабинет</a>
                 </li>
             </ul>
             <a class="btn btn-outline-light" th:href="@{/auth/logout}">Выход</a>

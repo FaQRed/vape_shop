@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" >
+<div th:replace="fragments/header :: head(~{::script}, ~{})"></div>
+<head>
+    <meta charset="utf-8">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+
+<header>
+    <div th:replace="fragments/nav-bar :: nav_bar"></div>
+</header>
+<main class="container-fluid">
+
+    <form th:action="@{/personalCabinet/updateUser}" th:object="${user}" method="post" id="edit_user_profile"
+          class="mt-5">
+        <div class="container" th:replace="fragments/alert"></div>
+        <div class="row gutters">
+            <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="account-settings">
+                            <div class="user-profile">
+                                <div class="user-avatar">
+                                    <img src="https://i.ya-webdesign.com/images/profile-avatar-png-8.png"
+                                         alt="User icon">
+                                </div>
+
+                            </div>
+                            <div class="about">
+                                <h5 class="mb-2 text-light">О себе</h5>
+                                <p>Здесь в будущем развитии добавлю раздел о себе</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <h6 class="mb-3 text-light">Персональные данные</h6>
+                            </div>
+                            <input type="hidden" th:field="*{pid}" name="pid" id="edit_user_id">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="firstName" class="col-form-label">Имя:</label>
+                                    <input type="text" th:field="*{firstName}" class="form-control" id="firstName"
+                                           name="firstName" required>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="lastName" class="col-form-label">Фамилия:</label>
+                                    <input type="text" th:field="*{lastName}" class="form-control" id="lastName"
+                                           name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="middleName" class="col-form-label">Отчество:</label>
+                                    <input type="text" th:field="*{middleName}" class="form-control" id="middleName"
+                                           name="middleName" required>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="password" class="col-form-label">Пароль:</label>
+                                    <input type="password" th:field="*{password}" class="form-control" id="password"
+                                           name="password" required>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                <div class="form-group">
+                                    <label for="login" class="col-form-label">Логин:</label>
+                                    <input type="text" th:field="*{login}" class="form-control" id="login" name="login"
+                                           required>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row gutters">
+                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                 <h6 class="mb-3 text-light">Address</h6>
+                             </div>
+                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                 <div class="form-group">
+                                     <label for="Street">Street</label>
+                                     <input type="name" class="form-control" id="Street" placeholder="Enter Street">
+                                 </div>
+                             </div>
+                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                 <div class="form-group">
+                                     <label for="ciTy">City</label>
+                                     <input type="name" class="form-control" id="ciTy" placeholder="Enter City">
+                                 </div>
+                             </div>
+                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                 <div class="form-group">
+                                     <label for="sTate">State</label>
+                                     <input type="text" class="form-control" id="sTate" placeholder="Enter State">
+                                 </div>
+                             </div>
+                             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                                 <div class="form-group">
+                                     <label for="zIp">Zip Code</label>
+                                     <input type="text" class="form-control" id="zIp" placeholder="Zip Code">
+                                 </div>
+                             </div>
+                         </div> -->
+                        <div class="row gutters">
+                            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                                <div class="text-right">
+                                    <button type="submit" class="btn btn-light">Сохранить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+<footer th:include="fragments/footer :: footer"></footer>
+
+</html>
+
+
+<style type="text/css">
+    body{
+        color: #bcd0f7;
+        background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612503158_16-p-serii-fon-s-dimom-17.jpg);
+    }
+
+    .account-settings .user-profile {
+        margin: 0 0 1rem 0;
+        padding-bottom: 1rem;
+        text-align: center;
+    }
+
+    .account-settings .user-profile .user-avatar {
+        margin: 0 0 1rem 0;
+    }
+
+    .account-settings .user-profile .user-avatar img {
+        width: 90px;
+        height: 90px;
+        -webkit-border-radius: 100px;
+        -moz-border-radius: 100px;
+        border-radius: 100px;
+    }
+
+    .account-settings .about {
+        margin: 1rem 0 0 0;
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+    .card {
+        background: #6d6b6b;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        border: 0;
+        margin-bottom: 1rem;
+    }
+
+    .form-control {
+        border: 1px solid #596280;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        border-radius: 2px;
+        font-size: .825rem;
+        background: #ffffff;
+        color: #000102;
+    }
+
+</style>
+
+<script type="text/javascript">
+
+</script>
