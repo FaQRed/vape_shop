@@ -1,0 +1,200 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+<style>
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-bottom: 15px;
+    }
+
+    input,
+    input::-webkit-input-placeholder {
+        font-size: 11px;
+        padding-top: 3px;
+    }
+
+    .form-control {
+        height: auto !important;
+        padding: 8px 12px !important;
+    }
+
+    .input-group {
+        box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.21) !important;
+    }
+
+    #button {
+        border: 1px solid #ccc;
+        margin-top: 28px;
+        padding: 6px 12px;
+        color: #666;
+        text-shadow: 0 1px #fff;
+        cursor: pointer;
+        border-radius: 3px 3px;
+        box-shadow: 0 1px #fff inset, 0 1px #ddd;
+        background: #fff9f9;
+        background: -moz-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f5f5f5), color-stop(100%, #eeeeee));
+        background: -webkit-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: -o-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: -ms-linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        background: linear-gradient(top, #f5f5f5 0%, #eeeeee 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f5f5f5', endColorstr='#eeeeee', GradientType=0);
+    }
+
+    .main-form {
+        margin-top: 30px;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 10px 40px;
+        background: #7f808a;
+        color: #FFF;
+        text-shadow: none;
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.31);
+    }
+
+    span.input-group-addon i {
+        color: #020a0a;
+        font-size: 17px;
+    }
+
+    .login-button {
+        margin-top: 5px;
+    }
+</style>
+<body style="background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612503158_16-p-serii-fon-s-dimom-17.jpg)">
+<div class="container">
+    <div class="row main-form">
+        <div th:if="${param.success}">
+            <div class="alert alert-info">
+                Вы успешно зарегистрировались!
+            </div>
+        </div>
+
+        <form th:action="@{/registration}" th:object="${user}" method="post">
+
+            <p class="error-message"
+               th:if="${#fields.hasGlobalErrors()}"
+               th:each="error : ${#fields.errors('global')}"
+               th:text="${error}">Validation error</p>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('firstName')}? 'has-error':''">
+                <label for="firstName" class="cols-sm-2 control-label">Имя</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{firstName}" name="name" id="firstName"
+                               placeholder="Введите свое имя"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('firstName')}"
+                           th:text="${error}">Validation error</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('lastName')}? 'has-error':''">
+                <label for="lastName" class="cols-sm-2 control-label">Фамилия</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{lastName}" name="lastName" id="lastName"
+                               placeholder="Введите свою фамилию"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('lastName')}"
+                           th:text="${error}">Validation error</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('middleName')}? 'has-error':''">
+                <label for="middleName" class="cols-sm-2 control-label">Отчество</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{middleName}" name="middleName"
+                               id="middleName" placeholder="Введите свое отчество"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('middleName')}"
+                           th:text="${error}">Validation error</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('login')}? 'has-error':''">
+                <label for="login" class="cols-sm-2 control-label">Логин</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{login}" name="login" id="login"
+                               placeholder="Введите свой логин"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('login')}"
+                           th:text="${error}">Логины должны совпадать</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('confirmLogin')}? 'has-error':''">
+                <label for="confirmLogin" class="cols-sm-2 control-label">Логин</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{confirmLogin}" name="confirmLogin"
+                               id="confirmLogin" placeholder="Повторите логин"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('login')}"
+                           th:text="${error}" >Логины должны совпадать</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('password')}? 'has-error':''">
+                <label for="password" class="cols-sm-2 control-label">Пароль</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{password}" name="password" id="password"
+                               placeholder="Введите свой пароль"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('password')}"
+                           >Passwords must match</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group"
+                 th:classappend="${#fields.hasErrors('confirmPassword')}? 'has-error':''">
+                <label for="confirmPassword" class="cols-sm-2 control-label">Пароль</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                        <input type="text" class="form-control" th:field="*{confirmPassword}" name="confirmPassword"
+                               id="confirmPassword" placeholder="Повторите пароль"/>
+                        <p class="error-message"
+                           th:each="error: ${#fields.errors('password')}"
+                           >Passwords must match</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-success">Зарегистрироваться</button>
+            </div>
+            <div class="form-group">
+                <span>Уже заригистрированы? <a style="color: #1c1f23" href="/" th:href="@{/login}">Войти</a></span>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body>
+</html>
