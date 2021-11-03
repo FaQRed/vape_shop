@@ -1,9 +1,8 @@
-package com.example.library.library.repository;
+package com.example.library.library.repository.goods.pod;
 
-import com.example.library.library.model.Pod;
+import com.example.library.library.model.goods.Pod;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 

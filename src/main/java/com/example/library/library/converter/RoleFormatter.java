@@ -1,6 +1,6 @@
 package com.example.library.library.converter;
 
-import com.example.library.library.model.Role;
+import com.example.library.library.model.user.Role;
 import org.springframework.format.Formatter;
 
 import java.text.ParseException;

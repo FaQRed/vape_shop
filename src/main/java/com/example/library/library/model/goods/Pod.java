@@ -1,4 +1,4 @@
-package com.example.library.library.model;
+package com.example.library.library.model.goods;
 
 import com.example.library.library.converter.YearAttributeConverter;
 

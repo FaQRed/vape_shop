@@ -1,6 +1,6 @@
-package com.example.library.library.service;
+package com.example.library.library.service.goods.pod;
 
-import com.example.library.library.model.Pod;
+import com.example.library.library.model.goods.Pod;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;

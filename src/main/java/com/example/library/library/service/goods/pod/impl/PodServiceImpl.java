@@ -1,8 +1,8 @@
-package com.example.library.library.service.impl;
+package com.example.library.library.service.goods.pod.impl;
 
-import com.example.library.library.model.Pod;
-import com.example.library.library.repository.PodRepository;
-import com.example.library.library.service.PodService;
+import com.example.library.library.model.goods.Pod;
+import com.example.library.library.repository.goods.pod.PodRepository;
+import com.example.library.library.service.goods.pod.PodService;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

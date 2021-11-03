@@ -1,4 +1,4 @@
-package com.example.library.library.repository;
+package com.example.library.library.repository.user;
 
 import java.util.List;
 

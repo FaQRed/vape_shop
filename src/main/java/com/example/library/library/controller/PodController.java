@@ -1,7 +1,7 @@
 package com.example.library.library.controller;
 
-import com.example.library.library.model.Pod;
-import com.example.library.library.service.PodService;
+import com.example.library.library.model.goods.Pod;
+import com.example.library.library.service.goods.pod.PodService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

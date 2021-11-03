@@ -1,4 +1,4 @@
-package com.example.library.library.model;
+package com.example.library.library.model.user;
 
 import javax.persistence.*;
 import java.util.ArrayList;

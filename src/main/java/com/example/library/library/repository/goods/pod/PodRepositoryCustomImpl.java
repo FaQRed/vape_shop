@@ -1,13 +1,11 @@
-package com.example.library.library.repository;
+package com.example.library.library.repository.goods.pod;
 
 
-import com.example.library.library.model.Pod;
-import com.example.library.library.model.User;
+import com.example.library.library.model.goods.Pod;
+import com.example.library.library.model.user.User;
 import org.hibernate.Criteria;
-import org.hibernate.FetchMode;
 import org.hibernate.Session;
 import org.hibernate.criterion.Disjunction;
-import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
@@ -24,7 +22,7 @@ public class PodRepositoryCustomImpl implements PodRepositoryCustom {
     private EntityManager em;
 
     @Override
-    public List<User> filterPod(String filterStr) {
+    public List<Pod> filterPod(String filterStr) {
         Session session = em.unwrap(Session.class);
         Criteria criteria = session.createCriteria(Pod.class);
         Disjunction disjunction = Restrictions.or(

@@ -1,7 +1,7 @@
-package com.example.library.library.repository;
+package com.example.library.library.repository.user;
 
-import com.example.library.library.model.Role;
-import com.example.library.library.model.User;
+import com.example.library.library.model.user.Role;
+import com.example.library.library.model.user.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -14,4 +14,6 @@ public interface UserRepository extends JpaRepository<User, Long>, UserRepositor
 
     @Query("select r from Role r")
     List<Role> getAllRolesForUser();
+
+    User findUserByLogin(String login);
 }

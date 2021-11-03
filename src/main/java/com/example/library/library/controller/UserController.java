@@ -1,7 +1,7 @@
 package com.example.library.library.controller;
 
-import com.example.library.library.model.User;
-import com.example.library.library.service.UserService;
+import com.example.library.library.model.user.User;
+import com.example.library.library.service.user.UserService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

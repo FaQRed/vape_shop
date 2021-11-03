@@ -1,7 +1,7 @@
 package com.example.library.library.security;
 
-import com.example.library.library.model.Status;
-import com.example.library.library.model.User;
+import com.example.library.library.model.user.Status;
+import com.example.library.library.model.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

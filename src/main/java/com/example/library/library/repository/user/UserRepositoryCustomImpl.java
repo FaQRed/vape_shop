@@ -1,7 +1,7 @@
-package com.example.library.library.repository;
+package com.example.library.library.repository.user;
 
 
-import com.example.library.library.model.User;
+import com.example.library.library.model.user.User;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Disjunction;

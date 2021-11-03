@@ -1,7 +1,7 @@
 package com.example.library.library.controller;
 
-import com.example.library.library.service.PodService;
-import com.example.library.library.service.UserService;
+import com.example.library.library.service.goods.pod.PodService;
+import com.example.library.library.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
