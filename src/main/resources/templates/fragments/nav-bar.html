@@ -23,8 +23,8 @@
                        aria-current="page" th:href="@{/statistics}">Статистика</a>
                 </li>
                 <li sec:authorize="hasAuthority('CUSTOMER')" class="nav-item">
-                    <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/goods')? 'active':''}"
-                       aria-current="page" th:href="@{/library}">Товары</a>
+                    <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/shop')? 'active':''}"
+                       aria-current="page" th:href="@{/shop}">Товары</a>
                 </li>
                 <li sec:authorize="hasAuthority('CUSTOMER') or hasAuthority('ADMIN') or hasAuthority('MODERATOR')" class="nav-item">
                     <a class="nav-link fs-5" th:classappend="${#strings.startsWith(view, '/main_cabinet')? 'active':''}"
